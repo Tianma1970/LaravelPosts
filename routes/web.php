@@ -13,6 +13,16 @@
 
 Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::middleware(['auth'])->group(function() {
+
+    Route::get('/countries', 'CountryController@index');
+    Route::get('/countries/{country}', 'CountryController@show');
+    Route::resource('/posts', 'PostController');
+
 });
