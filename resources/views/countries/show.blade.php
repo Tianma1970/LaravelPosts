@@ -9,8 +9,8 @@
                 <h2>Posts</h2>
                 @foreach($posts as $post)
                     <h3>{{ $post->title }}</h3>
-                    <h4>Posted by {{ $post->user->name }}</h4>
                     <p>{{ $post->content }}</p>
+                    <small>Posted by {{ $post->user->name }} from</small>
                         <a href="/countries/{{ $country->id }}">
                         {{ $country->name }}</a><hr>
                 @endforeach
