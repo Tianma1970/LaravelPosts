@@ -25,7 +25,12 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        if(Auth::guest()) {
+            abort(403);
+        }
+
+        //$categories = Category::orderBy('name')->get();
+        return view('posts/create');
     }
 
     /**
@@ -36,7 +41,17 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validData = $request->validate([
+            'category_id'   => 'required',
+            'title'         => 'required',
+            'content'       => 'required',
+        ]);
+
+        $validData['user_id'] = Auth::id();
+
+        $post = Post::create($validData);
+
+        return redirect('/posts/' . $post->id);
     }
 
     /**
