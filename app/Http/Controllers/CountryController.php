@@ -14,7 +14,8 @@ class CountryController extends Controller
      */
     public function index()
     {
-        //
+        $countries = Country::orderBy('name')->get();
+        return view('countries/index', ['countries' => $countries]);
     }
 
     /**
@@ -46,7 +47,12 @@ class CountryController extends Controller
      */
     public function show(Country $country)
     {
-        //
+        $posts = $country->posts;
+
+        return view('countries/show', [
+            'country' => $country,
+            'posts' => $posts
+            ]);
     }
 
     /**
