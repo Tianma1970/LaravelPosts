@@ -47,11 +47,8 @@ class CountryController extends Controller
      */
     public function show(Country $country)
     {
-        $posts = $country->posts;
-
         return view('countries/show', [
             'country' => $country,
-            'posts' => $posts
             ]);
     }
 
