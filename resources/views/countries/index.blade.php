@@ -3,7 +3,7 @@
 @section('content')
     <div class="container mt-3">
         <h1>Countries</h1>
-            <ol>
+            <ul>
             @foreach($countries as $country)
 
             <li>
@@ -12,7 +12,7 @@
             </li>
 
             @endforeach
-            </ol>
+            </ul>
     </div>
 
 
