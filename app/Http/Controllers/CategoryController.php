@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Category;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,10 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        if(Auth::guest()) {
+            abort(403);
+        }
+        return view('categories/create');
     }
 
     /**
@@ -36,7 +40,14 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validData = $request->validate([
+            'name'      => 'required'
+        ]);
+        $validData['user_id'] = Auth::id();
+
+        $category = Category::create($validData);
+
+        return redirect('/categories');
     }
 
     /**
@@ -47,7 +58,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return view('categories/show', ['category' => $category]);
     }
 
     /**
