@@ -23,6 +23,10 @@ Route::middleware(['auth'])->group(function() {
 
     Route::get('/countries', 'CountryController@index');
     Route::get('/countries/{country}', 'CountryController@show');
+    // Route::get('/categories', 'CategoryController@index');
+    // Route::get('/categories/{category}', 'CategoryController@show');
+    // Route::post('/categories', 'CategoryController@create');
+    Route::resource('/categories', 'CategoryController');
     Route::resource('/posts', 'PostController');
 
 });
