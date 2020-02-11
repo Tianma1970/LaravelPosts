@@ -1,7 +1,7 @@
 @extends('layouts/app')
 
 @section('content')
-    <div class="container mt-3">
+    <div class="container mt-3 col-6">
         <h1>{{ $post->title }}</h1>
         <small>Posted by {{ $post->user->name }} in {{ $post->category->name }}</small>
         <p>{{ $post->content }}</p>
