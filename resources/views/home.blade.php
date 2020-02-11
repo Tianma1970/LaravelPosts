@@ -14,7 +14,9 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    You are logged in as {{ Auth::user()->name }}!<br>
+
+                     <small>You created your acount at {{ Auth::user()->created_at }}</small>
                 </div>
             </div>
         </div>
