@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use App\Category;
 use App\Post;
 use Illuminate\Http\Request;
 
@@ -29,8 +30,8 @@ class PostController extends Controller
             abort(403);
         }
 
-        //$categories = Category::orderBy('name')->get();
-        return view('posts/create');
+        $categories = Category::orderBy('name')->get();
+        return view('posts/create', ['categories' => $categories]);
     }
 
     /**
