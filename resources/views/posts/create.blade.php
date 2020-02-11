@@ -12,11 +12,21 @@
             <!--Category-->
 
             <div class="form-group">
-                <label for="catgory:id">Category</label>
-                <input type="text" id="category_id"
-                 name="category_id" value="{{ old('category_id') }}"
-                 placeholder="Post Category ID"
-                 class="form-control">
+                <label for="category_id">Category</label>
+                <select id="category_id" name="category_id" class="form-control">
+                     <option value="">Please select a category</option>
+                     @foreach($categories as $category)
+                        <option value="{{ $category->id }}"
+                            @if($category->id == old('category_id'))
+                            selected
+                            @endif
+                            >
+                                {{ $category->name }}
+                        </option>
+                     @endforeach
+                 </select>
+
+
             </div>
 
             <!--Title-->
