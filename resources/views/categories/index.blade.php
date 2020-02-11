@@ -19,10 +19,11 @@
                     </ul>
 
 
-                @endif
-            @endforeach
-            </li>
-        </ul>
+                    @endif
+                    @endforeach
+                </li>
+            </ul>
+            <a href="categories/create" class="btn btn-secondary">Add a new category</a>
     </div>
 
 @endsection
