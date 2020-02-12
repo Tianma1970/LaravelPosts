@@ -2,19 +2,28 @@
 
 @section('content')
     <div class="container mt-3 col-6">
-        <h1>{{ $post->title }}</h1>
-        <small>Posted by {{ $post->user->name }} in {{ $post->category->name }}</small>
-        <p>{{ $post->content }}</p>
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title">
+                    <h1>{{ $post->title }}</h1>
+                    <small>Posted by {{ $post->user->name }} in<a href="/categories/{{ $category->id }}"> {{     $post->category->name }}</a></small>
+                </div>
+                <div class="card-text">
+                    <p>{{ $post->content }}</p>
+                    <small>Posted created at {{ $post->created_at }}</small>
 
-        <div class="mt-4">
-            <a href="/posts/create" class="btn btn-primary">Create a new Post</a>
-        </div>
-        <div class="mt-4">
-            <form method="POST" action="/posts/{{ $post->id }}">
-                @csrf
-                @method("DELETE")
-                <input type="submit" value="Delete Post" class="btn btn-danger">
-            </form>
+                    <div class="mt-4">
+                        <a href="/categories/create" class="btn btn-success">Add category</a>
+                    </div>
+                    <div class="mt-4">
+                        <form method="POST" action="/posts/{{ $post->id }}">
+                            @csrf
+                            @method("DELETE")
+                            <input type="submit" value="Delete Post"    class="btn         btn-danger">
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
