@@ -34,6 +34,9 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
+                            <a class="nav-link" href="/Allposts">All Posts</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="/countries">Countries</a>
                         </li>
                         <li class="nav-item">
