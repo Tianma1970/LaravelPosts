@@ -16,7 +16,9 @@ class PostController extends Controller
      */
     public function index()
     {
-
+        $posts = Post::orderBy('title')->get();
+        return view('/posts/index', [
+            'posts'    => $posts]);
     }
 
     /**
@@ -52,7 +54,7 @@ class PostController extends Controller
 
         $post = Post::create($validData);
 
-        return redirect('/posts/' . $post->id);
+        return redirect('/posts/' . $post->id)->with('status', 'Post created successfully');
     }
 
     /**
@@ -97,6 +99,9 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        //dd("Delete me");
+        $post->delete();
+
+        return redirect('/posts');
     }
 }

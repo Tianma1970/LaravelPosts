@@ -9,6 +9,13 @@
         <div class="mt-4">
             <a href="/posts/create" class="btn btn-primary">Create a new Post</a>
         </div>
+        <div class="mt-4">
+            <form method="POST" action="/posts/{{ $post->id }}">
+                @csrf
+                @method("DELETE")
+                <input type="submit" value="Delete Post" class="btn btn-danger">
+            </form>
+        </div>
     </div>
 
 
