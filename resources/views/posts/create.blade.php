@@ -5,8 +5,9 @@
         <h1>Create a new Post</h1>
 
         @include('partials/validation_errors')
+        @include('partials/status')
 
-        <form method="POST" action="/posts">
+        <form method="POST" action="/posts" class="col-6">
             @csrf
 
             <!--Category-->
