@@ -15,8 +15,25 @@
                     @endif
 
                     You are logged in as {{ Auth::user()->name }}!<br>
+                    <div class="container">
+                        <div class="jumbotron mt-5">
+                            @if(count(Auth::user()->posts) > 0)
+                            <h2>{{Auth::user()->name}}s Posts</h2>
+                            <h3>They really like {{ Auth::user()->favourite_color }}.</h3>
+                            <ul>
+                                @foreach(Auth::user()->posts as $post)
+                                <li><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></li>
 
-                     <small>You created your acount at {{ Auth::user()->created_at }}</small>
+                                @endforeach
+                             </ul>
+                             @else
+                             <p><i></i>No posts yet created<i></p><br>
+                                <a href="posts/create" class="btn btn-success">Create your first post</a>
+                             @endif
+
+                        </div>
+                    </div>
+                     <small>{{ Auth::user()->name }} created his acount at {{ Auth::user()->created_at }}</small>
                 </div>
             </div>
         </div>
