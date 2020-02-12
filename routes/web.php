@@ -28,5 +28,8 @@ Route::middleware(['auth'])->group(function() {
     // Route::post('/categories', 'CategoryController@create');
     Route::resource('/categories', 'CategoryController');
     Route::resource('/posts', 'PostController');
+    Route::get('/Allposts', 'AllpostsController@index');
+
+    //Route::resource('/posts', 'PostController@index');
 
 });
