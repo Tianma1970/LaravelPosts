@@ -21,6 +21,7 @@
                 </div>
             </div>
             @endforeach
+            <a href="/categories" class="btn btn-secondary">Back to Categories</a>
             @else
             No post for category {{ $category->name }} found<br>
             <a href="/posts/create" class="btn btn-success">Add Post</a>
