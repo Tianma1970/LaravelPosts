@@ -19,7 +19,8 @@
                         <div class="jumbotron mt-5">
                             @if(count(Auth::user()->posts) > 0)
                             <h2>{{Auth::user()->name}}s Posts</h2>
-                            <h3>They really like {{ Auth::user()->favourite_color }}.</h3>
+                            His Moto is: &nbsp; <p><i>{{Auth::user()->moto}}</i></p>
+
                             <ul>
                                 @foreach(Auth::user()->posts as $post)
                                 <li><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></li>
