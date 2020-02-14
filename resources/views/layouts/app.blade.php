@@ -36,6 +36,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/Allposts">All Posts</a>
                         </li>
+                        @if(Auth::user())
                         <li class="nav-item">
                             <a class="nav-link" href="/countries">Countries</a>
                         </li>
@@ -45,6 +46,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/posts/create">Create a new Post</a>
                         </li>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
