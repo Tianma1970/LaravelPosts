@@ -17,4 +17,9 @@ class AllpostsController extends Controller
             'post'  => $post
         ])->with("status", "Unicron is coming!!1!");
     }
+
+    public function show(Post $post)
+    {
+        return view('Allposts/showunauth', ['post' => $post]);
+    }
 }
