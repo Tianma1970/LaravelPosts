@@ -11,8 +11,8 @@
                 <div class="card-text">
                     <p>{{ $post->content }}</p>
                     <small>Posted created at {{ $post->created_at }}</small>
-                    @if(Auth::user()->id === $post->user_id)
-                    <div class="mt-4">
+                    {{-- @if(Auth::user()->id === $post->user_id) --}}
+                    {{-- <div class="mt-4">
                         <a href="/categories/create" class="btn btn-success">Add category</a>
                     </div>
                     <div class="mt-4">
@@ -20,10 +20,10 @@
                             @csrf
                             @method("DELETE")
                             <input type="submit" value="Delete Post"    class="btn         btn-danger">
-                        </form>
+                        </form> --}}
 
                     </div>
-                    @endif
+                    {{-- @endif --}}
                 </div>
             </div>
         </div>

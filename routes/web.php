@@ -20,12 +20,13 @@ Route::get('/', function () {
 });
 
 Route::get('/Allposts', 'AllpostsController@index');
+Route::get('/Allposts/{post}', 'AllpostsController@show');
 Route::middleware(['auth'])->group(function() {
+    Route::resource('/posts', 'PostController');
 
     Route::get('/countries', 'CountryController@index');
     Route::get('/countries/{country}', 'CountryController@show');
     Route::resource('/categories', 'CategoryController');
-    Route::resource('/posts', 'PostController');
 
 
 });

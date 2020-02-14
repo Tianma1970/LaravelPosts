@@ -33,9 +33,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                        @if(Auth::user())
+                        <li class="nav-item">
+                            <a class="nav-link" href="/posts">All Posts</a>
+                        </li>
+                        @else
                         <li class="nav-item">
                             <a class="nav-link" href="/Allposts">All Posts</a>
                         </li>
+                        @endif
                         @if(Auth::user())
                         <li class="nav-item">
                             <a class="nav-link" href="/countries">Countries</a>
