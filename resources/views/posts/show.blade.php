@@ -6,12 +6,12 @@
             <div class="card-body">
                 <div class="card-title">
                     <h1>{{ $post->title }}</h1>
-                    <small>Posted by {{ $post->user->name }} in<a href="/categories/{{ $category->id }}"> {{     $post->category->name }}</a></small>
+                    <small>Posted by {{ $post->user->name }} in<a href="/categories/show"> {{     $post->category->name }}</a></small>
                 </div>
                 <div class="card-text">
                     <p>{{ $post->content }}</p>
                     <small>Posted created at {{ $post->created_at }}</small>
-
+                    @if(Auth::user()->id === $post->user_id)
                     <div class="mt-4">
                         <a href="/categories/create" class="btn btn-success">Add category</a>
                     </div>
@@ -21,6 +21,7 @@
                             @method("DELETE")
                             <input type="submit" value="Delete Post"    class="btn         btn-danger">
                         </form>
+                    @endif
                     </div>
                 </div>
             </div>
