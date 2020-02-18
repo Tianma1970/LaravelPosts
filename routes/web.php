@@ -25,8 +25,6 @@ Route::get('/Allcategories/{category}', 'AllcategoriesController@show');
 
 Route::middleware(['auth'])->group(function() {
     Route::resource('/posts', 'PostController');
-    Route::get('/countries', 'CountryController@index');
-    Route::get('/countries/{country}', 'CountryController@show');
     Route::resource('/categories', 'CategoryController');
     Route::post('/motto', 'MottoController@store');
     Route::get('/motto/create', 'MottoController@edit');
