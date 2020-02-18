@@ -18,8 +18,9 @@
                     <div class="container">
                         <div class="jumbotron mt-5">
                             @if(count(Auth::user()->posts) > 0)
-                            <h2>{{Auth::user()->name}}s Posts</h2>
-                            His Moto is: &nbsp; <p><i>{{Auth::user()->moto}}</i></p>
+                            <h2 class="text-center">{{Auth::user()->name}}s Posts</h2>
+
+                            <p class="text-center">His Motto is:<br> {{ Auth::user()->motto }}</p>
 
                             <ul>
                                 @foreach(Auth::user()->posts as $post)
@@ -31,7 +32,7 @@
                              <p><i></i>No posts yet created<i></p><br>
                                 <a href="posts/create" class="btn btn-success">Create your first post</a>
                              @endif
-
+                                {{--  <a href="/moto/create" class="btn btn-info">Add/Edit your Moto</a>  --}}
                         </div>
                     </div>
                      <small>{{ Auth::user()->name }} created his acount at {{ Auth::user()->created_at }}</small>
