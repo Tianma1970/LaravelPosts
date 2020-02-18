@@ -29,7 +29,7 @@
                                 @endforeach
                              </ul>
                              @else
-                             <p><i></i>No posts yet created<i></p><br>
+                             <p><i></i>No posts created yet<i></p><br>
                                 <a href="posts/create" class="btn btn-success">Create your first post</a>
                              @endif
                                 {{--  <a href="/moto/create" class="btn btn-info">Add/Edit your Moto</a>  --}}

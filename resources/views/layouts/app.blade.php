@@ -52,6 +52,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/posts/create">Create a new Post</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/motto/create">Create your Motto</a>
+                        </li>
                         @endif
                     </ul>
 
