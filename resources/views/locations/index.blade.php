@@ -1,19 +1,16 @@
 @extends('layouts/app')
 
 @section('content')
-@include('partials/status')
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">All Posts</div>
+                <div class="card-header">All locations</div>
                     <div class="card-body">
                         <div class="jumbotron">
                             <ul>
-                                @foreach($posts as $post)
-                                <li><a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
-                                </li>
+                                @foreach($locations as $location)
+                                    <li><a href="/locations/show/">{{ $location->name }}</a></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -23,6 +20,4 @@
         </div>
     </div>
 </div>
-
-
 @endsection

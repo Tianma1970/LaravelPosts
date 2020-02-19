@@ -1,29 +1,28 @@
 @extends('layouts/app')
 
 @section('content')
-    <div class="container mt-3">
-        <h1>Categories</h1>
-        <ul>
-            @foreach($categories as $category)
-            <li>
-                <a href="/categories/{{ $category->id }}">{{ $category->name }}</a>
-
-                @if($category->categories()->exists())
-                    <ul>
-                        @foreach($category->categories()->orderBy('name')->get() as $subcategory)
-                        <li>
-                            <a href="/categories/{{ $subcategory->id }}">{{ $subcategory->name }}</a>
-
-                        </li>
-                        @endforeach
-                    </ul>
-
-
-                    @endif
-                    @endforeach
-                </li>
-            </ul>
-            <a href="categories/create" class="btn btn-secondary">Add a new category</a>
-    </div>
-
+   <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">All Categories</div>
+                        <div class="card-body">
+                            <div class="jumbotron">
+                            <ul>
+                            @foreach($categories as $category)
+                                    <li>
+                                    <a href="/categories/{{ $category->id }}">{{ $category->name }}</a>
+                                    <input type="checkbox" name="category[]" value="{{ $category->id }}">
+                            @endforeach
+                                    </li>
+                                </ul>
+                                <a href="/categories/create" class="btn btn-secondary">Add a new category</a>
+                                <a href="/categories/" class="btn btn-danger">Delete selected category</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
 @endsection
