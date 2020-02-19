@@ -39,11 +39,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function country() {
-        return $this->belongsTo(Country::class);
+    /**
+     * The attribute which has a default value
+     */
+    protected $attributes = [
+        'motto' => 0,
+    ];
+
+    public function location() {
+        return $this->hasMany(Location::class);
     }
 
     public function posts() {
         return $this->hasMany(Post::class);
     }
+
+
 }
