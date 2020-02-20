@@ -28,5 +28,7 @@ Route::middleware(['auth'])->group(function() {
     Route::resource('/categories', 'CategoryController');
     Route::post('/motto', 'MottoController@store');
     Route::get('/motto/create', 'MottoController@edit');
+    Route::post('/location/', 'LocationController@store');
+    Route::get('/locations/create', 'LocationController@edit');
 
 });
