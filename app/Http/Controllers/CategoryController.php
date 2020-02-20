@@ -48,7 +48,7 @@ class CategoryController extends Controller
 
         $category = Category::create($validData);
 
-        return redirect('/categories');
+        return redirect('/categories')->with('status', 'category added successfully');
     }
 
     /**
@@ -59,7 +59,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return view('categories/show', ['category' => $category]);
+        return redirect('/home')->with('status', 'category deleted successfully');
     }
 
     /**
@@ -93,6 +93,6 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        return redirect('/home')->with('status', 'category deleted successfully');
     }
 }
