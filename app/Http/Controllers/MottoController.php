@@ -15,27 +15,6 @@ class MottoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-
-        // $user = new User;
-        // $user->motto = $request->motto;
-        // $user->save();
-        /*$id = DB::table('users')->insertGetId(
-            ['motto'    => 'Testis motto']
-        );
-
-        $id->save();*/
-
-        $user = Auth::user();
-        $user->motto = $request->input('content');
-        $user->save();
-
-        return view('/home');
-    }
-
-
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -48,6 +27,18 @@ class MottoController extends Controller
 
         return view('/motto/create', ['user'  =>  $user]);
     }
+
+    public function store(Request $request)
+    {
+        $user = Auth::user();
+        $user->motto = $request->input('content');
+        $user->save();
+
+        return view('/home');
+    }
+
+
+
 
 
 
