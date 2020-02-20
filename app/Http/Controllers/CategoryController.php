@@ -26,6 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
+        //dd("titta, det är en controller");
         if(Auth::guest()) {
             abort(403);
         }
