@@ -1,13 +1,14 @@
 @extends('layouts/app')
 
 @section('content')
-   <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">All Categories</div>
-                        <div class="card-body">
-                            <div class="jumbotron">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">All Categories</div>
+                <div class="card-body">
+                    <div class="jumbotron">
+                            @include('partials/status')
                             <ul>
                             @foreach($categories as $category)
                                     <li>
