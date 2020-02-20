@@ -32,10 +32,10 @@
                              <p><i></i>No posts created yet<i></p><br>
                                 <a href="posts/create" class="btn btn-success">Create your first post</a>
                              @endif
-                                {{--  <a href="/moto/create" class="btn btn-info">Add/Edit your Moto</a>  --}}
+
                         </div>
                     </div>
-                     <small>{{ Auth::user()->name }} created his acount at {{ Auth::user()->created_at }}</small>
+                     <small>{{ Auth::user()->name }} created his account at {{ Auth::user()->created_at }}</small>
                 </div>
             </div>
         </div>
