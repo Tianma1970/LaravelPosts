@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Location;
 use Auth;
-use Illuminate\Http\Request;//man behöver egentligen inte detta namespace
+use Illuminate\Http\Request;
 use DB;
 
 class LocationController extends Controller
 {
-    public function create()
+    public function edit()
     {
         $user = Auth::user();
 
@@ -17,12 +18,11 @@ class LocationController extends Controller
         ]);
     }
 
-    public function store()
+    public function store(Request $request)
     {
         $user = Auth::user();
         $user->location = $request->input('content');
         $user->save();
-
 
         return view('/home');
     }
