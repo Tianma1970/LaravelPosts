@@ -20,14 +20,15 @@
                             @if(count(Auth::user()->posts) > 0)
                             <h2 class="text-center">{{Auth::user()->name}}s Posts</h2>
 
-                            <p class="text-center">His Motto is:<br> {{ Auth::user()->motto }}</p>
 
                             <ul>
                                 @foreach(Auth::user()->posts as $post)
                                 <li><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></li>
 
                                 @endforeach
-                             </ul>
+                            </ul>
+                            <p class="text-center">My Motto is:<br> {{ Auth::user()->motto }}</p>
+                            <p class="text-center">I am from {{ Auth::user()->location }}</p>
                              @else
                              <p><i></i>No posts created yet<i></p><br>
                                 <a href="posts/create" class="btn btn-success">Create your first post</a>
