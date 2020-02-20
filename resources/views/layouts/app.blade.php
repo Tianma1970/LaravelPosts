@@ -44,9 +44,6 @@
                         @endif
                         @if(Auth::user())
                         <li class="nav-item">
-                            <a class="nav-link" href="/countries">Countries</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="/categories">Categories</a>
                         </li>
                         <li class="nav-item">
@@ -54,6 +51,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/motto/create">Create your Motto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/locations/create">Add your location</a>
                         </li>
                         @endif
                     </ul>
