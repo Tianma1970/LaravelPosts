@@ -25,9 +25,15 @@ Route::get('/Allcategories/{category}', 'AllcategoriesController@show');
 
 Route::middleware(['auth'])->group(function() {
     Route::resource('/posts', 'PostController');
-    Route::resource('/categories', 'CategoryController');
+
+    Route::get('/categories', 'CategoryController@index');
+    Route::get('/categories/create', 'CategoryController@create');
+    Route::post('/categories', 'CategoryController@store');
+    Route::post('/categories/delete', 'CategoryController@deleteMany');
+
     Route::post('/motto', 'MottoController@store');
     Route::get('/motto/create', 'MottoController@edit');
+
     Route::post('/location/', 'LocationController@store');
     Route::get('/locations/create', 'LocationController@edit');
 
