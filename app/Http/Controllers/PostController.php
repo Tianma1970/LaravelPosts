@@ -10,6 +10,14 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     /**
+     * Validation
+     */
+    protected $validationRules = [
+        'title'     => 'required|min:3',
+        'content'   => 'required|min:8'
+    ];
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -76,7 +84,9 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        //dump('edit me');
+
+        return view('/posts/edit', ['post' => $post]);
     }
 
     /**
@@ -88,7 +98,14 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $validData = $request->validate($this->validationRules);
+
+        $post->title = $validData['title'];
+        $post->content = $validData['content'];
+
+        $post->save();
+
+        return redirect('/posts/' . $post->id)->with('status', 'Post edited successfully');
     }
 
     /**
