@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -72,5 +73,13 @@ class CategoryController extends Controller
         $idsToDelete = $request->input('ids');
         Category::destroy($idsToDelete);
         return redirect('/categories')->with('status', 'categories deleted successfully');
+    }
+
+    public function show (Category $category)
+    {
+        return view('/categories/show', [
+            'category'  => $category
+        ]);
+
     }
 }
