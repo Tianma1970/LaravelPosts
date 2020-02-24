@@ -119,6 +119,6 @@ class PostController extends Controller
         //dd("Delete me");
         $post->delete();
 
-        return redirect('/posts');
+        return redirect('/posts')->with('status', 'Post deleted successfully');
     }
 }
