@@ -41,6 +41,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/Allposts">All Posts</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/comments/">All Comments</a>
+                        </li>
                         @endif
                         @if(Auth::user())
                         <li class="nav-item">
