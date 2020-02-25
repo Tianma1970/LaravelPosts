@@ -10,24 +10,36 @@
                 </div>
                 <div class="card-text">
                     <p>{{ $post->content }}</p>
-                    <small>Posted created at {{ $post->created_at }}</small>
-                    {{-- @if(Auth::user()->id === $post->user_id) --}}
-                    {{-- <div class="mt-4">
-                        <a href="/categories/create" class="btn btn-success">Add category</a>
-                    </div>
-                    <div class="mt-4">
-                        <form method="POST" action="/posts/{{ $post->id }}">
-                            @csrf
-                            @method("DELETE")
-                            <input type="submit" value="Delete Post"    class="btn         btn-danger">
-                        </form> --}}
+                    <small>Posted created at {{ $post->created_at }}</small><br>
+                    <a href="/comments/create" class="btn btn-info">write a comment</a>
 
-                    </div>
+                </div>
                     {{-- @endif --}}
+            </div>
+        </div>
+        <div class="jumbotron mt-5">
+            <h4 class="text-center">Comments to {{ $post->title }}</h4>
+        </div>
+
+        @foreach($post->comments as $comment)
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        {{ $comment->author }}s comment
+                </button>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                        {{ $comment->content }}<br>
+                        <small>created by {{ $comment->author }} <a href="">{{ $comment->email }}</a></small>
+                    </div>
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
-
 
 @endsection
