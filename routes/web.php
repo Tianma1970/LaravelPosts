@@ -22,6 +22,7 @@ Route::get('/', function () {
 Route::get('/Allposts', 'AllpostsController@index');
 Route::get('/Allposts/{post}', 'AllpostsController@show');
 Route::get('/Allcategories/{category}', 'AllcategoriesController@show');
+Route::resource('/comments', 'CommentController');
 
 Route::middleware(['auth'])->group(function() {
     Route::resource('/posts', 'PostController');
