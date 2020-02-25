@@ -3,13 +3,18 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Post;
 
 class Comment extends Model
 {
 
     protected $fillable = [
+        'user_id',
+        'post_id',
         'content',
-        'post'];
+        'author',
+        'email'
+    ];
 
 
     protected $attributes = [
