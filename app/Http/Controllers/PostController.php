@@ -26,7 +26,10 @@ class PostController extends Controller
     {
         $posts = Post::orderBy('title')->get();
         return view('/posts/index', [
-            'posts'    => $posts]);
+            'posts'    => $posts
+
+            ]
+        );
     }
 
     /**
@@ -41,7 +44,11 @@ class PostController extends Controller
         }
 
         $categories = Category::orderBy('name')->get();
-        return view('posts/create', ['categories' => $categories]);
+        return view('posts/create', [
+            'categories'    => $categories,
+
+            ]
+        );
     }
 
     /**
