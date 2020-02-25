@@ -31,8 +31,9 @@ class CommentController extends Controller
     public function create(Post $post)
     {
         //dd('create me');
+        $posts = Post::orderBy('content')->get();
         return view('/comments/create', [
-            'post'  => $post
+            'posts'  => $posts
         ]);
     }
 
@@ -44,15 +45,17 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //dump('I am not stored yet');
+
         $validData = $request->validate([
             'content'       => 'required',
+            'author'        => 'required',
+            'email'         => 'required',
+            'post_id'       => 'required'
         ]);
-
-
+            //dump($validData); altid bra för att se om data kommer in i databasen
 
         $comment = Comment::create($validData);
-        return redirect('/comments/show')->with('status', 'Comment created successfully');
+        return redirect('/Allposts/')->with('status', 'Comment created successfully');
 
     }
 
