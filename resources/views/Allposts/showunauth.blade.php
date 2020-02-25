@@ -21,25 +21,25 @@
             <h4 class="text-center">Comments to {{ $post->title }}</h4>
         </div>
 
-        @foreach($post->comments as $comment)
         <div class="accordion" id="accordionExample">
+            @foreach($post->comments as $comment)
             <div class="card">
-                <div class="card-header" id="headingOne">
+                <div class="card-header" id="commentheading{{ $comment->id }}">
                     <h2 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#comment{{ $comment->id }}" aria-expanded="false" aria-controls="comment{{ $comment->id }}">
                         {{ $comment->author }}s comment
                 </button>
                 </div>
 
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div id="comment{{ $comment->id }}" class="collapse" aria-labelledby="commentheading{{ $comment->id }}" data-parent="#accordionExample">
                     <div class="card-body">
                         {{ $comment->content }}<br>
                         <small>created by {{ $comment->author }} <a href="">{{ $comment->email }}</a></small>
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
-        @endforeach
     </div>
 
 @endsection
