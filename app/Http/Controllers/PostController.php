@@ -80,7 +80,11 @@ class PostController extends Controller
      */
     public function show(Post $post, Category $category)
     {
-        return view('posts/show', ['post' => $post, 'category' => $category]);
+        return view('posts/show', [
+            'post' => $post,
+            'category' => $category
+            ]
+        );
     }
 
     /**
@@ -89,11 +93,16 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit(Post $post, Category $category)
     {
-        //dump('edit me');
+        // dd('edit me');
+        $categories = Category::where('parent_id', 0)->orderBy('name')->get();
 
-        return view('/posts/edit', ['post' => $post]);
+        return view('/posts/edit', [
+            'post'      => $post,
+            'categories'  => $categories
+            ]
+        );
     }
 
     /**
