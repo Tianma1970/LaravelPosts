@@ -7,7 +7,13 @@
                 <div class="card-title">
                     @include('partials/status')
                     <h1>{{ $post->title }}</h1>
-                    <small>Posted by {{ $post->user->name }} in<a href="/categories/{{ $post->category_id }}"> {{ $post->category->name }}</a></small>
+                    <small>Posted by {{ $post->user->name }} in
+                        @if($post->category)
+                        <a href="/categories/{{ $post->category_id }}"> {{ $post->category->name }}</a>
+                        @else
+                        <i>uncategorized</i>
+                        @endif
+                    </small>
                 </div>
                 <div class="card-text">
                     <p>{{ $post->content }}</p>
