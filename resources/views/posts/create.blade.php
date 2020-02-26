@@ -26,8 +26,6 @@
                         </option>
                      @endforeach
                  </select>
-
-
             </div>
 
             <!--Title-->
