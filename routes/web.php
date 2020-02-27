@@ -28,9 +28,9 @@ Route::middleware(['auth'])->group(function() {
     Route::resource('/posts', 'PostController');
 
     Route::get('/categories', 'CategoryController@index');
+    Route::get('/categories/{category}', 'CategoryController@show');
     Route::get('/categories/create', 'CategoryController@create');
     Route::post('/categories', 'CategoryController@store');
-    Route::get('/categories/{category}', 'CategoryController@show');
     Route::post('/categories/delete', 'CategoryController@deleteMany');
 
     Route::post('/motto', 'MottoController@store');
@@ -38,5 +38,9 @@ Route::middleware(['auth'])->group(function() {
 
     Route::post('/location/', 'LocationController@store');
     Route::get('/locations/create', 'LocationController@edit');
+
+    //uploading files
+    Route::get('/upload', 'PagesController@index');
+    Route::post('/uploadFile', 'PagesController@uploadFile');
 
 });
