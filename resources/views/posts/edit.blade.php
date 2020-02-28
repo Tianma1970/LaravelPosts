@@ -28,6 +28,8 @@
                      @endforeach
                  </select>
             </div>
+
+            <!--Title-->
             <div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" id="title"name="title" required value="{{ old('title') ? old('title') : $post->title }}">
