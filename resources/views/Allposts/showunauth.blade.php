@@ -40,7 +40,7 @@
                 <div id="comment{{ $comment->id }}" class="collapse" aria-labelledby="commentheading{{ $comment->id }}" data-parent="#accordionExample">
                     <div class="card-body">
                         {{ $comment->content }}<br>
-                        <small>created by {{ $comment->author }} <a href="">{{ $comment->email }}</a></small>
+                        <small>created by {{ $comment->author }} <a href="mailto:{{ $comment->email }}" target="_blank">{{ $comment->email }}</a></small>
                     </div>
                 </div>
             </div>
