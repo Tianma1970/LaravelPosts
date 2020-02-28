@@ -9,7 +9,6 @@ class PagesController extends Controller
 {
     public function index()
     {
-        dump('hello');
         return view('upload/index');
     }
 
@@ -54,9 +53,11 @@ class PagesController extends Controller
 
       }
 
+      //dd($file);
       // Redirect to index
-      return redirect()->action('PagesController@index');
+      return redirect()->action('PagesController@index')->with('status', 'file uploaded successfully');
    }
+
         }
 
 
