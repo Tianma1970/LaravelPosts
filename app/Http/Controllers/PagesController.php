@@ -24,17 +24,17 @@ class PagesController extends Controller
             $fileSize = $file->getSize();
             $mimeType = $file->getMimeType();
 
-        // Valid File Extensions
-        $valid_extension = array("jpg","jpeg","png");
+            // Valid File Extensions
+            $valid_extension = array("jpg","jpeg","png", "pdf", "zip");
 
-        // 2MB in Bytes
-        $maxFileSize = 2097152;
+            // 2MB in Bytes
+            $maxFileSize = 2097152;
 
-        // Check file extension
-        if(in_array(strtolower($extension),$valid_extension)){
+            // Check file extension
+            if(in_array(strtolower($extension),$valid_extension)){
 
-          // Check file size
-          if($fileSize <= $maxFileSize){
+            // Check file size
+            if($fileSize <= $maxFileSize){
 
              // File upload location
              $location = 'images';
@@ -43,19 +43,15 @@ class PagesController extends Controller
              $file->move($location,$filename);
 
              Session::flash('message','Upload Successful.');
-          }else{
-             Session::flash('message','File too large. File must be less than 2MB.');
           }
 
-        }else{
-           Session::flash('message','Invalid File Extension.');
         }
 
       }
 
-      //dd($file);
+      //dump($fileSize);
       // Redirect to index
-      return redirect()->action('PagesController@index')->with('status', 'file uploaded successfully');
+      return redirect()->action('PagesController@index')->with('success', 'file loaded successfully');
    }
 
         }
