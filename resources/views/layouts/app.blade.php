@@ -82,6 +82,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/upload">
+                                        {{ __('Upload your profil picture') }}
+                                    </a>
                                         <a class="dropdown-item" href="/home">
                                             {{ __('Your Profile') }}
                                         </a>
