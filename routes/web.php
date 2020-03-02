@@ -28,8 +28,8 @@ Route::middleware(['auth'])->group(function() {
     Route::resource('/posts', 'PostController');
 
     Route::get('/categories', 'CategoryController@index');
-    Route::get('/categories/{category}', 'CategoryController@show');
     Route::get('/categories/create', 'CategoryController@create');
+    Route::get('/categories/{category}', 'CategoryController@show');
     Route::post('/categories', 'CategoryController@store');
     Route::post('/categories/delete', 'CategoryController@deleteMany');
 
