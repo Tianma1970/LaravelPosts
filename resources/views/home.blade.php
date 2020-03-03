@@ -42,8 +42,16 @@
 
                              <a href="/upload" class="btn btn-info">upload an image</a>
                         </div>
+
+                        <div class="jumbotron mt-5 text-center">
+                        <small>
+                        Member Page: <a href="{{ url('/') }}/memberOnlyPage">Member Page</a><br>
+                        Admin Page: <a href="{{ url('/') }}/adminOnlyPage">Admin Page</a><br>
+                        Super Admin Page: <a href="{{ url('/') }}/superAdminOnlyPage">Super Admin Page</a><br></small>
+                        </div>
                     </div>
-                     <small>{{ Auth::user()->name }} created his account at {{ Auth::user()->created_at }}</small>
+                        <small>{{ Auth::user()->name }} created his account at {{ Auth::user()->created_at }}
+                    </small>
                 </div>
             </div>
         </div>
