@@ -19,6 +19,10 @@
                         <div class="jumbotron mt-5">
                             @if(count(Auth::user()->posts) > 0)
                             <h2 class="text-center">{{Auth::user()->name}}s Posts</h2>
+                            @if(Auth::user()->type)
+                            <p>You are logged in as {{strtoupper(Auth::user()->type)}}</p>
+                            @endif
+
                             {{-- Profile picture --}}
 
                             <ul>
