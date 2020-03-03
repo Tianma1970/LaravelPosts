@@ -39,6 +39,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/posts">All Posts</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/comments/create">Create a comment</a>
+                        </li>
                         @else
                         <li class="nav-item">
                             <a class="nav-link" href="/Allposts">All Posts</a>
