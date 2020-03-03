@@ -44,16 +44,19 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/upload', 'PagesController@index');
     Route::post('/uploadFile', 'PagesController@uploadFile');
 
-});
 
-Route::group(['middleware'  => 'App\Http\Middleware\MemberMiddleware'], function() {
-    Route::match(['get', 'post'], '/memberOnlyPage', 'HomeController@member');
-});
 
-Route::group(['middleware'  => 'App\Http\Middleware\AdminMiddleware'], function() {
-    Route::match(['get', 'post'], '/adminOnlyPage', 'HomeController@admin');
-});
+    Route::group(['middleware'  => 'App\Http\Middleware\MemberMiddleware'], function() {
+        Route::match(['get', 'post'], '/memberOnlyPage/', 'HomeController@member');
+    });
 
-Route::group(['middleware'  => 'App\Http\Middleware\SuperAdminMiddleware'], function() {
-    Route::match(['get', 'post'], '/adminOnlyPage', 'HomeController@super_admin');
+    Route::group(['middleware'  => 'App\Http\Middleware\AdminMiddleware'], function() {
+        Route::match(['get', 'post'], '/adminOnlyPage/', 'HomeController@admin');
+    });
+
+    Route::group(['middleware'  => 'App\Http\Middleware\SuperAdminMiddleware'], function() {
+        Route::match(['get', 'post'], '/superAdminOnlyPage/', 'HomeController@super_admin');
+        Route::post('comments/', 'CommentController@store');
+        Route::get('/comments/{comment}', 'CommentController@create');
+    });
 });
