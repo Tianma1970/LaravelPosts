@@ -31,7 +31,9 @@
 
                                 @endforeach
                             </ul>
+                            @if(Auth::user()->motto)
                             <p class="text-center">My Motto is:<br> {{ Auth::user()->motto }}</p>
+                            @endif
                             <p class="text-center">I am from {{ Auth::user()->location }}</p>
                              @else
                              <p><i></i>No posts created yet<i></p><br>
