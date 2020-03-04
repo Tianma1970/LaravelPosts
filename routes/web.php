@@ -22,8 +22,6 @@ Route::get('/', function () {
 Route::get('/Allposts', 'AllpostsController@index');
 Route::get('/Allposts/{post}', 'AllpostsController@show');
 Route::get('/Allcategories/{category}', 'AllcategoriesController@show');
-Route::get('/comments/', 'CommentController@index');
-
 
 Route::middleware(['auth'])->group(function() {
     Route::resource('/posts', 'PostController');
@@ -48,6 +46,7 @@ Route::middleware(['auth'])->group(function() {
 
     Route::group(['middleware'  => 'App\Http\Middleware\MemberMiddleware'], function() {
         Route::match(['get', 'post'], '/memberOnlyPage/', 'HomeController@member');
+        Route::get('/comments/', 'CommentController@index');
     });
 
     Route::group(['middleware'  => 'App\Http\Middleware\AdminMiddleware'], function() {
