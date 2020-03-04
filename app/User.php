@@ -43,8 +43,8 @@ class User extends Authenticatable
      * The attribute which has a default value
      */
     protected $attributes = [
-        'motto'     => 0,
-        'location'  => 0
+        'motto'     => NULL,
+        'location'  => NULL
     ];
 
     public function location() {
