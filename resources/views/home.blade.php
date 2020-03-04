@@ -13,18 +13,21 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in as {{ Auth::user()->name }}!<br>
+                    <div class="text-center">
+                        <p>You are logged in as {{ Auth::user()->name }}!
+                    @if(Auth::user()->type)
+                            as a {{strtoupper(Auth::user()->type)}}</p>
+                            @endif
+                    </div>
                     <div class="container">
                         <div class="jumbotron mt-5">
                             @if(count(Auth::user()->posts) > 0)
                             <h2 class="text-center">{{Auth::user()->name}}s Posts</h2>
-                            @if(Auth::user()->type)
-                            <p>You are logged in as {{strtoupper(Auth::user()->type)}}</p>
+                            @if(Auth::user()->user_image)
+                            <div class="col-12 text-center">
+                                <img src="{{Auth::user()->user_image}}"width='100' height='100'>
+                            </div>
                             @endif
-
-                            {{-- Profile picture --}}
-
                             <ul>
                                 @foreach(Auth::user()->posts as $post)
                                 <li><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></li>
