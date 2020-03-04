@@ -39,9 +39,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/posts">All Posts</a>
                         </li>
+                        @if(Auth::user()->type === 'super_admin')
                         <li class="nav-item">
                             <a class="nav-link" href="/comments/create">Create a comment</a>
                         </li>
+                        @endif
                         @else
                         <li class="nav-item">
                             <a class="nav-link" href="/Allposts">All Posts</a>
