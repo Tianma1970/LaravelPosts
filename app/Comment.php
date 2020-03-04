@@ -18,10 +18,10 @@ class Comment extends Model
 
 
     protected $attributes = [
-            'content'       => 0,
-            'post_id'       => 0,
-            'author'        => 0,
-            'email'         => 0
+            'content'       => NULL,
+            'post_id'       => NULL,
+            'author'        => NULL,
+            'email'         => NULL
     ];
 
     public function post()
