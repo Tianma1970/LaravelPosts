@@ -8,8 +8,8 @@
             <div class="jumbotron col-12">
                 <ul>
             @foreach($comments as $comment)
-                    <li>{{ $comment->content }}</li>
-
+                    <li>{{ $comment->content }}<br><i>commented post:&nbsp;</i><a href="{{$comment->post->id}}">{{ $comment->post->title }}</a><br>
+                    </li>
             @endforeach
                 </ul>
             </div>
