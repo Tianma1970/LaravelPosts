@@ -37,7 +37,9 @@
                             @if(Auth::user()->motto)
                             <p class="text-center">My Motto is:<br> {{ Auth::user()->motto }}</p>
                             @endif
+                            @if(Auth::user()->location)
                             <p class="text-center">I am from {{ Auth::user()->location }}</p>
+                            @endif
                              @else
                              <p><i></i>No posts created yet<i></p><br>
                                 <a href="posts/create" class="btn btn-success">Create your first post</a>
