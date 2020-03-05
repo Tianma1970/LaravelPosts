@@ -16,9 +16,9 @@
                             @endif
 
                             <!-- Form -->
-                            <form method='post' action='/uploadFile' enctype='multipart/form-data' >
+                            <form method='post' action='/store' enctype='multipart/form-data' >
                             {{ csrf_field() }}
-                            <input type='file' name='file' >
+                            <input type='file' name='image' >
                             <input type='submit' name='submit' value='Upload File'>
                             </form>
                         </div>
