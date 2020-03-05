@@ -40,6 +40,7 @@ Route::middleware(['auth'])->group(function() {
 
     //uploading files
     Route::get('/upload', 'PagesController@index');
+    Route::get('/delete', 'PagesController@destroy');
 
     //storing file in database
     Route::post('/store', 'PagesController@store');
