@@ -43,7 +43,6 @@
                                 <a href="posts/create" class="btn btn-success">Create your first post</a>
                              @endif
 
-                             <a href="/upload" class="btn btn-info">upload an image</a>
                         </div>
 
                         <div class="jumbotron mt-5 text-center">
