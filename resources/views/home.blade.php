@@ -25,7 +25,7 @@
                             <h2 class="text-center">{{Auth::user()->name}}s Posts</h2>
                             @if(Auth::user()->user_image)
                             <div class="col-12 text-center">
-                                <img src="{{Auth::user()->user_image}}"width='100' height='100'>
+                                <img src="/images/{{Auth::user()->user_image}}"width='100' height='100'>
                             </div>
                             @endif
                             <ul>
