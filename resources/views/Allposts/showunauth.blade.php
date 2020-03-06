@@ -17,12 +17,12 @@
                 <div class="card-text">
                     <p>{{ $post->content }}</p>
                     <small>Posted created at {{ $post->created_at }}</small><br>
-                    <a href="/comments/create" class="btn btn-info">write a comment</a>
 
                 </div>
                     {{-- @endif --}}
             </div>
         </div>
+        @if(count($post->comments) > 0)
         <div class="jumbotron mt-5">
             <h4 class="text-center">Comments to {{ $post->title }}</h4>
         </div>
@@ -46,6 +46,11 @@
             </div>
             @endforeach
         </div>
+        @else
+        <div class="alert-info mt-5 col-4 text-center">
+            <p>no comments yet written to {{ $post->title }}</p>
+        </div>
+        @endif
     </div>
 
 @endsection
