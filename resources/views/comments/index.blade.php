@@ -8,9 +8,19 @@
             <div class="jumbotron col-12">
                 <ul>
             @foreach($comments as $comment)
-                    <li>{{ $comment->content }}<br><i>commented post:&nbsp;</i><a href="{{$comment->post->id}}">{{ $comment->post->title }}</a><br>
+                    <li>{{ $comment->content }}<br>
+                        @if(Auth::user())
+                        <i>commented post:&nbsp;</i><a href="/posts/{{$comment->post->id}}">{{ $comment->post->title }}</a><br>
+                        @endif
                     </li>
             @endforeach
+
+            @guest
+            <div class="alert-danger col-9 mt-5 text-center">
+                create an account to show which posts are commented
+            </div>
+            @endguest
+
                 </ul>
             </div>
         </div>
