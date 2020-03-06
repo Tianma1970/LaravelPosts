@@ -12,7 +12,8 @@
                     <div class="jumbotron">
                             <ul>
                                 @foreach($posts as $post)
-                                <li><a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
+                                <li><a href="/posts/{{ $post->id }}">{{ $post->title }}</a><br>
+                                    <small>written by {{ $post->user->name }}</small>
                                 </li>
                                 @endforeach
                             </ul>
