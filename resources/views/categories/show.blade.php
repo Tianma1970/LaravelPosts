@@ -2,11 +2,11 @@
 
 @section('content')
 
-<div class="container mt-3 col-6">
+<div class="container mt-3 col-lg-6">
     <h1>Posts from Category {{ $category->name }} </h1>
             @if(count($category->posts) > 0)
             @foreach($category->posts as $post)
-            <div class="card">
+            <div class="card mt-3">
                 <div class="card-group">
                     <div class="row">
                             <div class="card-body">
