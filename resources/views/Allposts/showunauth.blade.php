@@ -8,7 +8,7 @@
                     <h1>{{ $post->title }}</h1>
                     <small>Posted by {{ $post->user->name }}
                         @if ($post->category)
-                            in <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
+                            in {{ $post->category->name }}
                         @else
                             <i>uncategorized</i>
                         @endif
